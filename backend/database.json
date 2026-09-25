@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "username": "Admin",
+      "password": "admin@123",
+      "confirmPassword": "admin@123",
+      "gender": "male",
+      "email": "admin@gmail.com",
+      "id": "101",
+      "role": "admin"
+    },
+    {
+      "username": "Akshay",
+      "password": "akshay@123",
+      "confirmPassword": "akshay@123",
+      "gender": "male",
+      "email": "akshay@gmail.com",
+      "id": "QtfCrznqOpg",
+      "role": "user"
+    },
+    {
+      "username": "Gokul",
+      "password": "gokul@123",
+      "confirmPassword": "gokul@123",
+      "gender": "male",
+      "email": "gokul@gmail.com",
+      "id": "-e9RfiWeLiw",
+      "role": "user"
+    }
+  ],
+  "courses": [
+    {
+      "id": "3RX2vlxu894",
+      "cName": "Springboot BootCamp Class",
+      "cImg": "https://dz2cdn1.dzone.com/storage/temp/12434118-spring-boot-logo.png",
+      "cDuration": "1",
+      "cPrice": "20000",
+      "cTrainer": "Sai Charan Sir",
+      "cDesc": "this is spring family course"
+    },
+    {
+      "id": "Vkefhl5d_M0",
+      "cName": "Java BootCamp",
+      "cPrice": "10000",
+      "cImg": "https://i.insider.com/580a9aa6c52402b7248b6183?width=600&format=jpeg&auto=webp",
+      "cTrainer": "Shishira sir",
+      "cDesc": "This is the best java course possible",
+      "cDuration": "4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
