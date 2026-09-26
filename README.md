@@ -81,36 +81,57 @@ Course Management System is a responsive React web application that enables user
 
 # 📸 Project Preview
 
-### Account Creation & Authentication
+## 🔐 Account Creation & Authentication
+
 The authentication flow includes a detailed registration form and a clean login interface for returning users.
 
-**Registration View**
-![Create Account](registration-page.png)
+### Registration Page
 
-**Login View**
-![Welcome Back Login](login-page.png)
+<p align="center">
+  <img src="screenshots/registration-page.png" width="900"/>
+</p>
 
----
+### Login Page
 
-### Admin View
-The admin dashboard allows administrators to view, update, and delete existing courses, as well as add new courses to the catalog through a dedicated form.
-
-**Course Management Dashboard**
-![Admin Course Management](admin-dashboard.png)
-
-**Add New Course Form**
-![Add New Course](add-course-form.png)
+<p align="center">
+  <img src="screenshots/login-page.png" width="900"/>
+</p>
 
 ---
 
-### User View
-Users can browse the available course catalog and click into specific courses to view detailed information and add them to their cart.
+## 👨‍💼 Admin Dashboard
 
-**Course Browsing Catalog**
-![User Course Listing](user-course-catalog.png)
+The admin dashboard allows administrators to manage courses by viewing, editing, deleting, and adding new courses.
 
-**Course Details & Cart Management**
-![Course Details](course-details-page.png)
+### Course Management Dashboard
+
+<p align="center">
+  <img src="screenshots/admin-dashboard.png" width="900"/>
+</p>
+
+### Add New Course
+
+<p align="center">
+  <img src="screenshots/add-course-form.png" width="900"/>
+</p>
+
+---
+
+## 👨‍🎓 User Experience
+
+Users can browse the complete course catalog, explore detailed course information, and manage their selected courses through the cart.
+
+### Course Catalog
+
+<p align="center">
+  <img src="screenshots/user-course-catalog.png" width="900"/>
+</p>
+
+### Course Details
+
+<p align="center">
+  <img src="screenshots/course-details-page.png" width="900"/>
+</p>
 
 ---
 
@@ -136,3 +157,178 @@ JSON Server
    │
    ▼
 database.json
+```
+
+---
+
+# 🔄 Application Workflow
+
+```text
+Register
+      │
+      ▼
+User Account Created
+      │
+      ▼
+Login
+      │
+      ▼
+Authentication
+      │
+      ▼
+Access Protected Pages
+      │
+      ▼
+Browse Courses
+      │
+      ▼
+Add / Update Courses
+      │
+      ▼
+Manage Cart
+      │
+      ▼
+Logout
+```
+
+---
+
+# 📂 Project Structure
+
+```text
+Course-Management-System/
+│
+├── backend/
+│   ├── database.json
+│   └── server.js
+│
+├── public/
+│
+├── screenshots/
+│   ├── registration-page.png
+│   ├── login-page.png
+│   ├── admin-dashboard.png
+│   ├── add-course-form.png
+│   ├── user-course-catalog.png
+│   └── course-details-page.png
+│
+├── src/
+│   ├── components/
+│   ├── context/
+│   ├── pages/
+│   ├── routes/
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── .gitignore
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+---
+
+# ⚙️ Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/AkshaykumarSanti/Course-Management-System.git
+```
+
+### Move into the project directory
+
+```bash
+cd Course-Management-System
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start JSON Server
+
+```bash
+npm run server
+```
+
+### Run the React application
+
+```bash
+npm run dev
+```
+
+### Open in your browser
+
+```text
+http://localhost:5173
+```
+
+---
+
+# 🚀 Future Enhancements
+
+- 🔎 Course Search & Filtering
+- ❤️ Wishlist Feature
+- 👤 Student Profile Management
+- 📊 Admin Dashboard Analytics
+- 🌙 Dark Mode
+- ☁️ REST API Integration
+- 🗃️ MySQL Database Migration
+- 🔔 Email Notifications
+
+---
+
+# 📚 Learning Outcomes
+
+Through this project, I gained practical experience in:
+
+- React Component Architecture
+- Context API
+- React Router DOM
+- Protected Routing
+- CRUD Operations
+- State Management
+- Form Validation
+- Responsive UI Development
+- JSON Server Integration
+- Git & GitHub Workflow
+
+---
+
+# 👨‍💻 About the Developer
+
+## Akshaykumar Santi
+
+🎓 Bachelor of Engineering (Computer Science & Engineering)
+
+🎯 CGPA: **9.15**
+
+💻 Aspiring Software Developer passionate about React, JavaScript, Python, Django, SQL, and Full-Stack Web Development.
+
+### Technical Skills
+
+- React.js
+- JavaScript (ES6)
+- Python
+- Django
+- SQL
+- HTML5
+- CSS3
+- Git
+- GitHub
+
+Currently strengthening Data Structures & Algorithms while building real-world full-stack applications.
+
+---
+
+<p align="center">
+
+⭐ If you found this project useful, consider giving it a Star.
+
+Made with ❤️ using React & JavaScript.
+
+</p>
