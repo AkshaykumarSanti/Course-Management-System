@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const AddCourse = () => {
-  let navigate = useNavigate()
+  const navigate = useNavigate();
   const { handleAddCourse } = useContext(CourseProvider);
 
   const [cDetails, setCDetails] = useState({
@@ -18,14 +18,7 @@ const AddCourse = () => {
     cDuration: "",
   });
 
-  const {
-    cDesc,
-    cDuration,
-    cImg,
-    cName,
-    cPrice,
-    cTrainer,
-  } = cDetails;
+  const { cDesc, cDuration, cImg, cName, cPrice, cTrainer } = cDetails;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,19 +33,16 @@ const AddCourse = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/courses",
-        {
-          id: randomId(),
-          ...cDetails,
-        }
-      );
+      const res = await axios.post("http://localhost:5000/courses", {
+        id: randomId(),
+        ...cDetails,
+      });
 
       if (res.status === 201) {
         toast.success("Course Added Successfully");
 
         handleAddCourse(res.data);
-        navigate('/')
+        navigate("/");
 
         setCDetails({
           cName: "",
@@ -70,128 +60,126 @@ const AddCourse = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-10">
+    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-3">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-2xl rounded-2xl bg-white p-8 shadow-lg"
+        className="w-full max-w-lg rounded-xl bg-white p-5 shadow-md"
       >
-        <h1 className="mb-2 text-center text-3xl font-bold text-gray-800">
+        <h1 className="mb-1 text-center text-xl font-bold text-gray-800">
           Add New Course
         </h1>
 
-        <p className="mb-8 text-center text-sm text-gray-500">
-          Fill in the details to create a new course
+        <p className="mb-4 text-center text-xs text-gray-500">
+          Fill in the course details
         </p>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {/* Course Name */}
           <div className="sm:col-span-2">
-            <label className="mb-2 block text-sm font-semibold text-gray-700">
+            <label className="mb-1 block text-xs font-semibold text-gray-700">
               Course Name
             </label>
 
             <input
               type="text"
-              placeholder="Enter course name"
               name="cName"
               value={cName}
               onChange={handleChange}
+              placeholder="Enter course name"
               required
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
             />
           </div>
 
-          {/* Image */}
+          {/* Image URL */}
           <div className="sm:col-span-2">
-            <label className="mb-2 block text-sm font-semibold text-gray-700">
+            <label className="mb-1 block text-xs font-semibold text-gray-700">
               Course Image URL
             </label>
 
             <input
               type="url"
-              placeholder="https://example.com/course.jpg"
               name="cImg"
               value={cImg}
               onChange={handleChange}
+              placeholder="https://example.com/course.jpg"
               required
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
             />
           </div>
 
           {/* Duration */}
           <div>
-            <label className="mb-2 block text-sm font-semibold text-gray-700">
+            <label className="mb-1 block text-xs font-semibold text-gray-700">
               Duration
             </label>
 
             <input
               type="text"
-              placeholder="e.g. 3 Months"
-              value={cDuration}
               name="cDuration"
+              value={cDuration}
               onChange={handleChange}
+              placeholder="e.g. 3 Months"
               required
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
             />
           </div>
 
           {/* Price */}
           <div>
-            <label className="mb-2 block text-sm font-semibold text-gray-700">
+            <label className="mb-1 block text-xs font-semibold text-gray-700">
               Price
             </label>
 
             <input
               type="number"
-              placeholder="Enter price"
-              value={cPrice}
               name="cPrice"
+              value={cPrice}
               onChange={handleChange}
+              placeholder="Enter price"
               required
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
             />
           </div>
 
           {/* Trainer */}
           <div className="sm:col-span-2">
-            <label className="mb-2 block text-sm font-semibold text-gray-700">
+            <label className="mb-1 block text-xs font-semibold text-gray-700">
               Trainer
             </label>
 
             <input
               type="text"
-              placeholder="Enter trainer name"
-              value={cTrainer}
               name="cTrainer"
+              value={cTrainer}
               onChange={handleChange}
+              placeholder="Enter trainer name"
               required
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
             />
           </div>
 
           {/* Description */}
           <div className="sm:col-span-2">
-            <label className="mb-2 block text-sm font-semibold text-gray-700">
+            <label className="mb-1 block text-xs font-semibold text-gray-700">
               Description
             </label>
 
             <textarea
-              placeholder="Enter course description"
               name="cDesc"
               value={cDesc}
               onChange={handleChange}
+              placeholder="Enter course description"
+              rows="2"
               required
-              rows="4"
-              className="w-full resize-none rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full resize-none rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
             />
           </div>
         </div>
 
-        {/* Submit Button */}
         <button
           type="submit"
-          className="mt-7 w-full rounded-lg bg-blue-600 py-3 font-semibold text-white transition hover:bg-blue-700 active:scale-[0.98]"
+          className="mt-4 w-full rounded-lg bg-blue-600 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 active:scale-[0.98]"
         >
           Add Course
         </button>

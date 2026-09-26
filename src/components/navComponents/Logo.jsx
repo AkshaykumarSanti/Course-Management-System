@@ -7,7 +7,7 @@ const Logo = () => {
       to="/"
       className="text-xl font-bold tracking-tight text-slate-900 transition-colors hover:text-blue-600"
     >
-      Course<span className="text-blue-600">.</span>
+      CourseEra<span className="text-blue-600">.</span>
     </Link>
   );
 };

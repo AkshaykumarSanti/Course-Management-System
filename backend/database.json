@@ -26,26 +26,44 @@
       "email": "gokul@gmail.com",
       "id": "-e9RfiWeLiw",
       "role": "user"
+    },
+    {
+      "username": "Akki",
+      "password": "1111",
+      "confirmPassword": "1111",
+      "gender": "male",
+      "email": "akki@gmail.com",
+      "id": "dCrUMyjgc_4",
+      "role": "user"
     }
   ],
   "courses": [
     {
       "id": "3RX2vlxu894",
       "cName": "Springboot BootCamp Class",
-      "cImg": "https://dz2cdn1.dzone.com/storage/temp/12434118-spring-boot-logo.png",
-      "cDuration": "1",
-      "cPrice": "20000",
+      "cImg": "https://miro.medium.com/1*o5FmjKTPdJTbhGE2MIjo6w.jpeg",
+      "cDuration": "8",
+      "cPrice": "19899",
       "cTrainer": "Sai Charan Sir",
       "cDesc": "this is spring family course"
     },
     {
       "id": "Vkefhl5d_M0",
       "cName": "Java BootCamp",
-      "cPrice": "10000",
+      "cPrice": "9999",
       "cImg": "https://i.insider.com/580a9aa6c52402b7248b6183?width=600&format=jpeg&auto=webp",
       "cTrainer": "Shishira sir",
       "cDesc": "This is the best java course possible",
-      "cDuration": "4"
+      "cDuration": "14"
+    },
+    {
+      "id": "aU2MF0nQwfY",
+      "cName": "Python DSA",
+      "cPrice": "24599",
+      "cImg": "https://cdn.hashnode.com/res/hashnode/image/upload/v1681398940826/a18e5c63-967d-49d2-8aa6-c00c61b07737.png",
+      "cTrainer": "Pavan Sir",
+      "cDesc": "This is the best Python DSA course.",
+      "cDuration": "36"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

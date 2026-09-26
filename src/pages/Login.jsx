@@ -1,38 +1,57 @@
 import React, { useContext, useState } from "react";
-import { v4 as randomId } from "uuid";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { UserProvider } from "../context/UserContext";
+
 const Login = () => {
-  let {login} = useContext(UserProvider)
-  let navigate = useNavigate();
-  let [formData, setFormData] = useState({
+  const { login } = useContext(UserProvider);
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
     email: "",
     password: "",
-    role: "",
   });
 
-  let { password, email, role } = formData;
+  const { email, password } = formData;
 
-  let handleChange = (e) => {
-    let name = e.target.name;
-    let value = e.target.value;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  console.log(formData);
-  let handleSubmit = async (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    let res = await axios.get(
-      `http://localhost:5000/users?email=${email}&password=${password}&role=${role}`,
-    );
-    if (res.status == 200 && res.data.length > 0) {
-      login(res.data[0])
-      
-      toast.success("login successfull");
+
+    if (!email.trim() || !password) {
+      toast.error("Enter your email and password");
+      return;
+    }
+
+    try {
+      const { data } = await axios.get("http://localhost:5000/users", {
+        params: {
+          email: email.trim(),
+        },
+      });
+
+      if (data.length === 0) {
+        toast.error("User not found");
+        return;
+      }
+
+      const user = data[0];
+
+      if (user.password !== password) {
+        toast.error("Invalid password");
+        return;
+      }
+
+      login(user);
+      toast.success("Login successful");
       navigate("/");
-    } else {
-      toast.error("cannot login");
+    } catch (error) {
+      toast.error("Cannot reach the server");
     }
   };
 
@@ -41,94 +60,56 @@ const Login = () => {
       onSubmit={handleSubmit}
       className="mx-auto w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/50 sm:p-8"
     >
-      {/* Heading */}
       <div className="mb-6 text-center">
-        <p className="mt-2 text-sm text-slate-500">Login</p>
+        <h2 className="text-2xl font-bold text-slate-900">Welcome Back</h2>
+        <p className="mt-2 text-sm text-slate-500">Login to your account</p>
       </div>
 
       <div className="space-y-5">
-        {/* Email */}
         <div>
-          <label
-            htmlFor="email"
-            className="mb-2 block text-sm font-medium text-slate-700"
-          >
+          <label className="mb-2 block text-sm font-medium text-slate-700">
             Email
           </label>
 
           <input
-            id="email"
             type="email"
-            value={email}
             name="email"
+            value={email}
             onChange={handleChange}
             placeholder="you@example.com"
-            className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10"
+            className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10"
           />
         </div>
 
-        {/* Password */}
         <div>
-          <label
-            htmlFor="password"
-            className="mb-2 block text-sm font-medium text-slate-700"
-          >
+          <label className="mb-2 block text-sm font-medium text-slate-700">
             Password
           </label>
 
           <input
-            id="password"
             type="password"
+            name="password"
             value={password}
             onChange={handleChange}
-            name="password"
             placeholder="Enter your password"
-            className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10"
+            className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10"
           />
         </div>
 
-        {/* Gender */}
-        <div>
-          <label className="mb-3 block text-sm font-medium text-slate-700">
-            Role
-          </label>
-
-          <div className="flex gap-6">
-            <label className="flex cursor-pointer items-center gap-2 text-sm text-slate-600">
-              <input
-                type="radio"
-                checked={role === "admin"}
-                onChange={handleChange}
-                value="admin"
-                name="role"
-                className="h-4 w-4 accent-blue-600"
-              />
-              Admin
-            </label>
-
-            <label className="flex cursor-pointer items-center gap-2 text-sm text-slate-600">
-              <input
-                type="radio"
-                checked={role === "user"}
-                onChange={handleChange}
-                value="user"
-                name="role"
-                className="h-4 w-4 accent-blue-600"
-              />
-              user
-            </label>
-          </div>
-        </div>
-
-        {/* Button */}
         <button
           type="submit"
-          className="w-full rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-200 transition-all duration-200 hover:bg-blue-700 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-blue-500/20 active:scale-[0.98]"
+          className="w-full rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white hover:bg-blue-700"
         >
           Login
         </button>
       </div>
-      <p>Don't have an account ? <Link to='/signup'>SignUp</Link></p>
+
+      <p className="mt-5 text-center text-sm text-slate-600">
+        Don't have an account?{" "}
+        <Link to="/signup" className="font-semibold text-blue-600">
+          Sign Up
+        </Link>
+      </p>
     </form>
   );
 };
