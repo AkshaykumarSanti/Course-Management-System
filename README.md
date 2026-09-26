@@ -315,6 +315,7 @@ Through this project, I gained practical experience in:
 - JavaScript (ES6)
 - Python
 - Django
+- REST API
 - SQL
 - HTML5
 - CSS3
