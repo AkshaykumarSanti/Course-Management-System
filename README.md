@@ -91,7 +91,7 @@ The authentication flow includes a detailed registration form and a clean login 
   <img src="screenshots/registration-page.png" width="900"/>
 </p>
 
-### Login Page
+<h3 align="center">Login Page</h3>
 
 <p align="center">
   <img src="screenshots/login-page.png" width="900"/>
@@ -103,13 +103,13 @@ The authentication flow includes a detailed registration form and a clean login 
 
 The admin dashboard allows administrators to manage courses by viewing, editing, deleting, and adding new courses.
 
-### Course Management Dashboard
+<h3 align="center">Course Management Dashboard</h3>
 
 <p align="center">
   <img src="screenshots/admin-dashboard.png" width="900"/>
 </p>
 
-### Add New Course
+<h3 align="center">Add New Course</h3>
 
 <p align="center">
   <img src="screenshots/add-course-form.png" width="900"/>
@@ -121,13 +121,13 @@ The admin dashboard allows administrators to manage courses by viewing, editing,
 
 Users can browse the complete course catalog, explore detailed course information, and manage their selected courses through the cart.
 
-### Course Catalog
+<h3 align="center">Course Catalog</h3>
 
 <p align="center">
   <img src="screenshots/user-course-catalog.png" width="900"/>
 </p>
 
-### Course Details
+<h3 align="center">Course Details</h3>
 
 <p align="center">
   <img src="screenshots/course-details-page.png" width="900"/>
