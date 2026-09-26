@@ -21,17 +21,17 @@ Course Management System is a responsive React web application that enables user
 
 # 📚 Table of Contents
 
-- Features
-- Tech Stack
-- Technical Highlights
-- Project Preview
-- Architecture
-- Application Workflow
-- Project Structure
-- Installation
-- Future Enhancements
-- Learning Outcomes
-- About the Developer
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Technical Highlights](#-technical-highlights)
+- [Project Preview](#-project-preview)
+- [Architecture](#-architecture)
+- [Application Workflow](#-application-workflow)
+- [Project Structure](#-project-structure)
+- [Installation](#️-installation)
+- [Future Enhancements](#-future-enhancements)
+- [Learning Outcomes](#-learning-outcomes)
+- [About the Developer](#-about-the-developer)
 
 ---
 
@@ -81,7 +81,36 @@ Course Management System is a responsive React web application that enables user
 
 # 📸 Project Preview
 
-> Screenshots will be added soon.
+### Account Creation & Authentication
+The authentication flow includes a detailed registration form and a clean login interface for returning users.
+
+**Registration View**
+![Create Account](registration-page.png)
+
+**Login View**
+![Welcome Back Login](login-page.png)
+
+---
+
+### Admin View
+The admin dashboard allows administrators to view, update, and delete existing courses, as well as add new courses to the catalog through a dedicated form.
+
+**Course Management Dashboard**
+![Admin Course Management](admin-dashboard.png)
+
+**Add New Course Form**
+![Add New Course](add-course-form.png)
+
+---
+
+### User View
+Users can browse the available course catalog and click into specific courses to view detailed information and add them to their cart.
+
+**Course Browsing Catalog**
+![User Course Listing](user-course-catalog.png)
+
+**Course Details & Cart Management**
+![Course Details](course-details-page.png)
 
 ---
 
@@ -107,169 +136,3 @@ JSON Server
    │
    ▼
 database.json
-```
-
----
-
-# 🔄 Application Workflow
-
-```text
-Register
-      │
-      ▼
-User Account Created
-      │
-      ▼
-Login
-      │
-      ▼
-Authentication
-      │
-      ▼
-Access Protected Pages
-      │
-      ▼
-Browse Courses
-      │
-      ▼
-Add / Update Courses
-      │
-      ▼
-Manage Cart
-      │
-      ▼
-Logout
-```
-
----
-
-# 📂 Project Structure
-
-```text
-Course-Management-System/
-│
-├── backend/
-│   └── database.json
-│
-├── public/
-│
-├── src/
-│   ├── components/
-│   ├── context/
-│   ├── pages/
-│   ├── routes/
-│   ├── App.jsx
-│   └── main.jsx
-│
-├── .gitignore
-├── index.html
-├── package.json
-├── vite.config.js
-└── README.md
-```
-
----
-
-# ⚙️ Installation
-
-### Clone the repository
-
-```bash
-git clone https://github.com/AkshaykumarSanti/Course-Management-System.git
-```
-
-### Move into the project directory
-
-```bash
-cd Course-Management-System
-```
-
-### Install dependencies
-
-```bash
-npm install
-```
-
-### Start JSON Server
-
-```bash
-npx json-server backend/database.json --port 5000
-```
-
-### Run the React application
-
-```bash
-npm run dev
-```
-
-### Open in your browser
-
-```text
-http://localhost:5173
-```
-
----
-
-# 🚀 Future Enhancements
-
-- 🔎 Course Search & Filtering
-- ❤️ Wishlist Feature
-- 👤 Student Profile Management
-- 📊 Admin Dashboard
-- 🌙 Dark Mode
-- ☁️ REST API Integration
-- 🗃️ Database Migration (MySQL)
-- 🔔 Email Notifications
-
----
-
-# 📚 Learning Outcomes
-
-Through this project, I gained practical experience in:
-
-- React Component Architecture
-- Context API
-- React Router DOM
-- Protected Routing
-- CRUD Operations
-- State Management
-- Form Validation
-- Responsive UI Development
-- JSON Server Integration
-- Git & GitHub Workflow
-
----
-
-# 👨‍💻 About the Developer
-
-## Akshaykumar Santi
-
-🎓 Bachelor of Engineering (Computer Science & Engineering)
-
-🎯 CGPA: **9.15**
-
-💻 Aspiring Software Developer passionate about React, JavaScript, Python, Django, SQL and Full-Stack Web Development.
-
-### Technical Skills
-
-- React.js
-- JavaScript
-- Python
-- Django
-- SQL
-- HTML5
-- CSS3
-- Git
-- GitHub
-
-Currently strengthening Data Structures & Algorithms while building real-world full-stack applications.
-
----
-
-<p align="center">
-
-⭐ If you found this project useful, consider giving it a Star.
-
-Made with ❤️ using React & JavaScript.
-
-</p>
