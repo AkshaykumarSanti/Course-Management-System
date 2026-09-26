@@ -85,7 +85,7 @@ Course Management System is a responsive React web application that enables user
 
 The authentication flow includes a detailed registration form and a clean login interface for returning users.
 
-### Registration Page
+<h3 align="center">Registration Page</h3>
 
 <p align="center">
   <img src="screenshots/registration-page.png" width="900"/>
